@@ -106,7 +106,7 @@ $('.thanks').bind('webkitAnimationEnd', function() {
 });
 
 function calcDate() {
-	var date1=new Date(2017,0,2,1,3);
+	var date1=new Date(2017,2,13,0,0);
 	var date2=new Date();
 	var date3=date2.getTime()-date1.getTime();
 
