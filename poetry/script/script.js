@@ -4,7 +4,7 @@ $('.name-overlay .input-name').focus();
 
 $('.name-overlay .input-name').keypress(function(event) {
 	if(event.which == 13) {
-		if($('.name-overlay .input-name').val() != '高楠','澈澈') {
+		if($('.name-overlay .input-name').val() != '澈澈') {
 			$('.name-overlay .warning').css('color', 'red');
 			return;
 		}
