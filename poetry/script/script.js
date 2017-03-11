@@ -15,6 +15,28 @@ $('.name-overlay .input-name').keypress(function(event) {
 	}
 });
 
+function calcDate() {
+	var date1=new Date(2017,1,13,0,0);
+	var date2=new Date();
+	var date3=date2.getTime()-date1.getTime();
+
+	var days=Math.floor(date3/(24*3600*1000));
+	 
+	var leave1=date3%(24*3600*1000);
+	var hours=Math.floor(leave1/(3600*1000));
+
+	var leave2=leave1%(3600*1000);
+	var minutes=Math.floor(leave2/(60*1000));
+
+	var leave3=leave2%(60*1000);
+	var seconds=Math.round(leave3/1000);
+
+	$(".date").text(days + '天' + hours + '时' + minutes + '分' + seconds + '秒');
+	setTimeout('calcDate()', 1000);
+}
+
+calcDate();
+
 $('.circle').bind('webkitAnimationEnd', function() {
 	$('.name-overlay').remove();
 	$('.screen-1').addClass('animation');
@@ -105,24 +127,4 @@ $('.thanks').bind('webkitAnimationEnd', function() {
 	}
 });
 
-function calcDate() {
-	var date1=new Date(2017,1,13,0,0);
-	var date2=new Date();
-	var date3=date2.getTime()-date1.getTime();
 
-	var days=Math.floor(date3/(24*3600*1000));
-	 
-	var leave1=date3%(24*3600*1000);
-	var hours=Math.floor(leave1/(3600*1000));
-
-	var leave2=leave1%(3600*1000);
-	var minutes=Math.floor(leave2/(60*1000));
-
-	var leave3=leave2%(60*1000);
-	var seconds=Math.round(leave3/1000);
-
-	$(".date").text(days + '天' + hours + '时' + minutes + '分' + seconds + '秒');
-	setTimeout('calcDate()', 1000);
-}
-
-calcDate();
